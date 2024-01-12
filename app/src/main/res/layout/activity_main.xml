@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/edit_main"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="305dp"
         android:layout_centerInParent="true"
         android:hint="Enter any number" />
 
@@ -24,5 +24,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_main" />
+
+    <TextView
+        android:id="@+id/returnText"
+        android:hint="Return text"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="100dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

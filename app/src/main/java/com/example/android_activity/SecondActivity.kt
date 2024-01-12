@@ -1,5 +1,6 @@
 package com.example.android_activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -18,7 +19,15 @@ class SecondActivity : AppCompatActivity() {
         btn_second=findViewById(R.id.btn_second)
         //this is getting the data from the first page
         val number =intent.getStringExtra("number")
+        val result=Integer.parseInt(number)// converting the string into integer to perform multiplication
         //this is used for reflecting the data on the second page
-        textViewSecond.text="number :"+number
+        textViewSecond.text="Received number is :"+number
+        btn_second.setOnClickListener {
+            val answer = result * 2 // Calculate the result by multiplying the received number by 2
+            val returnIntent = Intent() // Intent created to return the result to the calling activity
+            returnIntent.putExtra("RESULT", answer)
+            setResult(RESULT_OK, returnIntent) // Set the result with RESULT_OK and the return Intent
+            finish()
+        }
     }
 }
