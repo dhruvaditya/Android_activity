@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) // Checking if the result code indicates a successful operation.
             {
-                val data: Intent? = result.data // Extracting data from the returned Intent
+                val data: Intent? = result.data // Taken data from the second screen
                 val resultValue = data?.getIntExtra("RESULT", 0) // Extracting the result value from the Intent, defaulting to 0 if not present
-                returnText.text = "Result after multiplying 2 : $resultValue"  // Updating the UI to display the result after multiplying 2
+//                println(resultValue)
+                returnText.text = "Result after multiplying by 2 : $resultValue"  // Update the Screent to display the new number
             }
         }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         //finding by Id to both the declared constrains.
         edit_main=findViewById(R.id.edit_main)
         btn_main=findViewById(R.id.btn_main)
+        returnText=findViewById(R.id.returnText)
         // this button sending the data from the main screen to the second activity screen
         btn_main.setOnClickListener { startActivity(Intent(this,SecondActivity::class.java).putExtra("number",edit_main.text.toString())) }
     }

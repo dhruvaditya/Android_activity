@@ -27,7 +27,7 @@
 
     <TextView
         android:id="@+id/returnText"
-        android:hint="Return text"
+        android:hint="Returned value:  "
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginBottom="100dp"
